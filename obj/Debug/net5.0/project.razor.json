@@ -15619,6 +15619,11 @@
   "RootNamespace": "NetMVC",
   "Documents": [
     {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Student\\Edit.cshtml",
+      "TargetPath": "Views\\Student\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Net\\NetMVC\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -15629,8 +15634,38 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Movie\\Create.cshtml",
+      "TargetPath": "Views\\Movie\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Net\\NetMVC\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Student\\Index.cshtml",
+      "TargetPath": "Views\\Student\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Student\\Delete.cshtml",
+      "TargetPath": "Views\\Student\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Movie\\Delete.cshtml",
+      "TargetPath": "Views\\Movie\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Movie\\Index.cshtml",
+      "TargetPath": "Views\\Movie\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Movie\\Details.cshtml",
+      "TargetPath": "Views\\Movie\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15639,8 +15674,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Student\\Details.cshtml",
+      "TargetPath": "Views\\Student\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Net\\NetMVC\\Views\\Helloworld\\Index.cshtml",
       "TargetPath": "Views\\Helloworld\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Student\\Create.cshtml",
+      "TargetPath": "Views\\Student\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Net\\NetMVC\\Views\\Movie\\Edit.cshtml",
+      "TargetPath": "Views\\Movie\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
