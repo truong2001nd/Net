@@ -9,8 +9,8 @@ using NetMVC.Data;
 namespace NetMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211104013934_StudentCreate")]
-    partial class StudentCreate
+    [Migration("20211111024457_PersonCreate")]
+    partial class PersonCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,14 +41,30 @@ namespace NetMVC.Migrations
                     b.ToTable("Movies");
                 });
 
+            modelBuilder.Entity("NetMVC.Models.Person", b =>
+                {
+                    b.Property<string>("PersonID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PersonName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PersonID");
+
+                    b.ToTable("Person");
+                });
+
             modelBuilder.Entity("NetMVC.Models.Student", b =>
                 {
                     b.Property<int>("StudentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("StudentAge")
+                    b.Property<int>("Address")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("StudentName")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("StudentID");
 

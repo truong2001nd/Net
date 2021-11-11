@@ -16,6 +16,23 @@ namespace NetMVC.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.11");
 
+            modelBuilder.Entity("NetMVC.Models.Employee", b =>
+                {
+                    b.Property<int>("EmployeeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("EmployeeName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EmployeeID");
+
+                    b.ToTable("Employee");
+                });
+
             modelBuilder.Entity("NetMVC.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -39,18 +56,54 @@ namespace NetMVC.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("NetMVC.Models.Student", b =>
+            modelBuilder.Entity("NetMVC.Models.Person", b =>
                 {
-                    b.Property<int>("StudentID")
+                    b.Property<string>("PersonID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PersonName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PersonID");
+
+                    b.ToTable("Person");
+                });
+
+            modelBuilder.Entity("NetMVC.Models.Product", b =>
+                {
+                    b.Property<int>("ProductID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("StudentAge")
+                    b.Property<string>("ProductName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("StudentID");
+                    b.Property<string>("UnitPrice")
+                        .HasColumnType("TEXT");
 
-                    b.ToTable("Students");
+                    b.HasKey("ProductID");
+
+                    b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("NetMVC.Models.Student", b =>
+                {
+                    b.Property<int>("PStudentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StudentName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PStudentID");
+
+                    b.ToTable("Student");
                 });
 #pragma warning restore 612, 618
         }

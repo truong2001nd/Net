@@ -34,7 +34,7 @@ namespace NetMVC.Controllers
             }
 
             var student = await _context.Student
-                .FirstOrDefaultAsync(m => m.StudentID == id);
+                .FirstOrDefaultAsync(m => m.PStudentID == id);
             if (student == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace NetMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentID,StudentAge")] Student student)
+        public async Task<IActionResult> Create([Bind("PStudentID,StudentName,Address")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace NetMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentID,StudentAge")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("PStudentID,StudentName,Address")] Student student)
         {
-            if (id != student.StudentID)
+            if (id != student.PStudentID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace NetMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.StudentID))
+                    if (!StudentExists(student.PStudentID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace NetMVC.Controllers
             }
 
             var student = await _context.Student
-                .FirstOrDefaultAsync(m => m.StudentID == id);
+                .FirstOrDefaultAsync(m => m.PStudentID == id);
             if (student == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace NetMVC.Controllers
 
         private bool StudentExists(int id)
         {
-            return _context.Student.Any(e => e.StudentID == id);
+            return _context.Student.Any(e => e.PStudentID == id);
         }
     }
 }

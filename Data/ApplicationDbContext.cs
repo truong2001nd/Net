@@ -16,6 +16,12 @@ namespace NetMVC.Data
         public DbSet<NetMVC.Models.Movie> Movie { get; set; }
 
         public DbSet<NetMVC.Models.Student> Student { get; set; }
+
+        public DbSet<NetMVC.Models.Person> Person { get; set; }
+
+        public DbSet<NetMVC.Models.Employee> Employee { get; set; }
+
+        public DbSet<NetMVC.Models.Product> Product { get; set; }
     }
 }
 

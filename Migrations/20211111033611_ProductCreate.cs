@@ -2,28 +2,30 @@
 
 namespace NetMVC.Migrations
 {
-    public partial class StudentCreate : Migration
+    public partial class ProductCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "Product",
                 columns: table => new
                 {
-                    StudentID = table.Column<int>(type: "INTEGER", nullable: false)
+                    ProductID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    StudentAge = table.Column<int>(type: "INTEGER", nullable: false)
+                    ProductName = table.Column<string>(type: "TEXT", nullable: true),
+                    UnitPrice = table.Column<string>(type: "TEXT", nullable: true),
+                    Quantity = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.StudentID);
+                    table.PrimaryKey("PK_Product", x => x.ProductID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "Product");
         }
     }
 }
