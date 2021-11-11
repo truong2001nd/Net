@@ -25,9 +25,8 @@
                 @Html.DisplayFor(modelItem => item.PersonName)
             </td>
             <td>
-                <a asp-action="Create" asp-route-id="@item.PersonID">Create</a> |
-                <a asp-action="Read" asp-route-id="@item.PersonID"> Read</a> |
-                <a asp-action="Update" asp-route-id="@item.PersonID"> Update</a> |
+                 <a asp-action="Edit" asp-route-id="@item.PersonID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PersonID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.PersonID">Delete</a>
             </td>
         </tr>

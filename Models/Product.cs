@@ -17,7 +17,7 @@ namespace NetMVC.Models
          [DisplayName("Tên sảm phẩm")]
         public string ProductName { get; set; }
         [DisplayName("Giá đơn vị")]
-        public string  UnitPrice { get; set; }
+        public int  UnitPrice { get; set; }
         [DisplayName("Số lượng")]
         public int Quantity { get; set; }
        

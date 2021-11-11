@@ -43,7 +43,7 @@ namespace NetMVC
                         options.UseSqlServer(connectionString);
                     }
                 });
-
+                    services.AddTransient<DbInitializer>();
                     services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("NetMVCContextt")));
         }

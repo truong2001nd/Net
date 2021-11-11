@@ -81,8 +81,8 @@ namespace NetMVC.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("UnitPrice")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("UnitPrice")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("ProductID");
 

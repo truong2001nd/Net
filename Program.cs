@@ -15,23 +15,23 @@ namespace NetMVC
     {
         public static void Main(string[] args)
         {
-           var host = CreateHostBuilder(args).Build();
-
-             using (var scope = host.Services.CreateScope())
+          var host = CreateHostBuilder(args).Build();
+            using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
 
                 try
                 {
-                    SeedData.Initialize(services);
+                    var dbInitializer = services.GetService<DbInitializer>();
+                    dbInitializer.Seed();
+
                 }
                 catch (Exception ex)
                 {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred seeding the DB.");
+                    var logger = services.GetService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred while seeding the database");
                 }
             }
-
             host.Run();
         }
 
