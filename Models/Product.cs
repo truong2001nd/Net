@@ -20,6 +20,10 @@ namespace NetMVC.Models
         public int  UnitPrice { get; set; }
         [DisplayName("Số lượng")]
         public int Quantity { get; set; }
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
+        public Category Category {get; set;}
+
        
        
         

@@ -22,7 +22,8 @@ namespace NetMVC.Controllers
         // GET: Product
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            var applicationDbContext = _context.Product.Include(p => p.Category);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Product/Details/5
@@ -34,6 +35,7 @@ namespace NetMVC.Controllers
             }
 
             var product = await _context.Product
+                .Include(p => p.Category)
                 .FirstOrDefaultAsync(m => m.ProductID == id);
             if (product == null)
             {
@@ -46,6 +48,8 @@ namespace NetMVC.Controllers
         // GET: Product/Create
         public IActionResult Create()
         {
+            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryName");
+            ViewData["CategoryName"] = new SelectList(_context.Category, "CategoryName", "CategoryID");
             return View();
         }
 
@@ -54,7 +58,7 @@ namespace NetMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID,ProductName,UnitPrice,Quantity")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductID,ProductName,UnitPrice,Quantity,CategoryID,CategoryName")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +66,8 @@ namespace NetMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryName", product.CategoryID);
+            ViewData["CategoryName"] = new SelectList(_context.Category, "CategoryName", "CategoryID", product.CategoryName);
             return View(product);
         }
 
@@ -78,6 +84,7 @@ namespace NetMVC.Controllers
             {
                 return NotFound();
             }
+            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryID", product.CategoryID);
             return View(product);
         }
 
@@ -86,7 +93,7 @@ namespace NetMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,UnitPrice,Quantity")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,UnitPrice,Quantity,CategoryID,CategoryName")] Product product)
         {
             if (id != product.ProductID)
             {
@@ -113,6 +120,7 @@ namespace NetMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryID", product.CategoryID);
             return View(product);
         }
 
@@ -125,6 +133,7 @@ namespace NetMVC.Controllers
             }
 
             var product = await _context.Product
+                .Include(p => p.Category)
                 .FirstOrDefaultAsync(m => m.ProductID == id);
             if (product == null)
             {

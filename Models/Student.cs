@@ -8,7 +8,7 @@ namespace NetMVC.Models
 {
    [Table("Student")]
    
-    public class Student
+    public class Student 
     {
         [Key]
         [DisplayName("Mã số Sinh viên")]

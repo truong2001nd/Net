@@ -187,6 +187,16 @@ E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Employee\Delete.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Employee\Details.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Employee\Edit.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\People\Create.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\People\Delete.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\People\Details.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\People\Edit.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\People\Index.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Category\Details.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
+E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs

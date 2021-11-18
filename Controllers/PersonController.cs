@@ -22,7 +22,7 @@ namespace NetMVC.Controllers
         // GET: Person
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Person.ToListAsync());
+            return View(await _context.People.ToListAsync());
         }
 
         // GET: Person/Details/5
@@ -46,6 +46,7 @@ namespace NetMVC.Controllers
         // GET: Person/Create
         public IActionResult Create()
         {
+
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace NetMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            
             return View(person);
         }
 

@@ -46,6 +46,9 @@ namespace NetMVC
                     services.AddTransient<DbInitializer>();
                     services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("NetMVCContextt")));
+
+                //     services.AddDbContext<ApplicationDbContex>(options =>
+                //    options.UseSqlite(Configuration.GetConnectionString("ApplicationDbContex")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

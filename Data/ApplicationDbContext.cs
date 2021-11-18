@@ -22,6 +22,11 @@ namespace NetMVC.Data
         public DbSet<NetMVC.Models.Employee> Employee { get; set; }
 
         public DbSet<NetMVC.Models.Product> Product { get; set; }
+
+        public DbSet<NetMVC.Models.People> People { get; set; }
+
+        public DbSet<NetMVC.Models.Category> Category { get; set; }
+        
     }
 }
 

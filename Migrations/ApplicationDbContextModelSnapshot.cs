@@ -16,6 +16,20 @@ namespace NetMVC.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.11");
 
+            modelBuilder.Entity("NetMVC.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryID");
+
+                    b.ToTable("Category");
+                });
+
             modelBuilder.Entity("NetMVC.Models.Employee", b =>
                 {
                     b.Property<int>("EmployeeID")
@@ -61,12 +75,18 @@ namespace NetMVC.Migrations
                     b.Property<string>("PersonID")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("PersonName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonID");
 
                     b.ToTable("Person");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Person");
                 });
 
             modelBuilder.Entity("NetMVC.Models.Product", b =>
@@ -74,6 +94,12 @@ namespace NetMVC.Migrations
                     b.Property<int>("ProductID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ProductName")
                         .HasColumnType("TEXT");
@@ -85,6 +111,8 @@ namespace NetMVC.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ProductID");
+
+                    b.HasIndex("CategoryID");
 
                     b.ToTable("Product");
                 });
@@ -104,6 +132,38 @@ namespace NetMVC.Migrations
                     b.HasKey("PStudentID");
 
                     b.ToTable("Student");
+                });
+
+            modelBuilder.Entity("NetMVC.Models.People", b =>
+                {
+                    b.HasBaseType("NetMVC.Models.Person");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PeopleID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PeopleName")
+                        .HasColumnType("TEXT");
+
+                    b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("People");
+                });
+
+            modelBuilder.Entity("NetMVC.Models.Product", b =>
+                {
+                    b.HasOne("NetMVC.Models.Category", null)
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("NetMVC.Models.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
