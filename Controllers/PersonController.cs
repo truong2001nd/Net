@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NetMVC.Data;
 using NetMVC.Models;
+using NetMVC.Models.process;
+
 
 namespace NetMVC.Controllers
 {
     public class PersonController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly StringProcess _strpro;
 
-        public PersonController(ApplicationDbContext context)
+        public PersonController(ApplicationDbContext context , StringProcess strpro)
         {
             _context = context;
+            _strpro = strpro;
         }
 
         // GET: Person
@@ -44,9 +48,20 @@ namespace NetMVC.Controllers
         }
 
         // GET: Person/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-
+            string  strkey = "";
+            var idnew = await _context.Person.ToListAsync();
+            if(idnew.Count() == 0){
+                strkey = "PER001";
+            } 
+            else
+            {
+                var personID = idnew.OrderByDescending(m => m.PersonID).FirstOrDefault().PersonID;
+                strkey = _strpro.Generatekey(personID);
+            }
+            ViewBag.PersonKey =  strkey;
+              
             return View();
         }
 

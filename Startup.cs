@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using NetMVC.Data;
+using NetMVC.Models.process;
 
 namespace NetMVC
 {
@@ -43,6 +44,7 @@ namespace NetMVC
                         options.UseSqlServer(connectionString);
                     }
                 });
+                    services.AddTransient<StringProcess>();
                     services.AddTransient<DbInitializer>();
                     services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("NetMVCContextt")));
