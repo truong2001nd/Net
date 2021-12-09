@@ -10,6 +10,7 @@ namespace NetMVC.Models
    
     public class Student 
     {
+        public static int Subject { get; internal set; }
         [Key]
         [DisplayName("Mã số Sinh viên")]
         public int PStudentID  { get; set; }

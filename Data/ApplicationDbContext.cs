@@ -27,6 +27,7 @@ namespace NetMVC.Data
 
         public DbSet<NetMVC.Models.Category> Category { get; set; }
         
+        
     }
 }
 

@@ -202,3 +202,6 @@ E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs
 E:\Net\NetMVC\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+E:\Net\NetMVC\bin\Debug\net5.0\EPPlus.dll
+E:\Net\NetMVC\bin\Debug\net5.0\Microsoft.IO.RecyclableMemoryStream.dll
+E:\Net\NetMVC\bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll
